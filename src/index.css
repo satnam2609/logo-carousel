@@ -1,0 +1,61 @@
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+ body{
+  background: #f2f2f2;
+ }
+
+.logos{
+  overflow: hidden;
+  padding: 60px 0;
+  background-color: aliceblue;
+  white-space:nowrap;
+  position:relative;
+}
+
+.logos:hover .logos-slide{
+  animation-play-state: paused;
+}
+
+
+.logos:before .logos:after{
+  position: absolute;
+  top:0;
+  
+  width: 250px;
+  height: 100%;
+
+  content:'';
+  z-index:2;
+}
+.logos:before{
+  background: linear-gradient(to left,transparent,white);
+  left:0;
+}
+
+.logos:after{
+  background: linear-gradient(to right,transparent,white);
+  right:0;
+}
+
+ .logos-slide{
+ 
+  display: inline-block;
+  animation: 35s slide infinite linear;
+ }
+ .logos-slide img{
+    height: 50px;
+    margin:0 40px;
+ }
+
+ @keyframes slide {
+  from{
+     transform: translateX(0);
+  }
+  to{
+     transform: translateX(-100%);
+  }
+ }
